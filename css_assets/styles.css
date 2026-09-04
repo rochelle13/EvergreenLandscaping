@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap');
+
+/*Color Palette*/
+:root {
+    --dark-green: #003818;
+    --forest-green: #03541F;
+    --olive-green: #2B4201;
+    --medium-green: #4D7E00;
+    --bright-green: #00A439;
+
+    --dark-brown: #3B1107;
+    --brown: #531B11;
+    --burnt-orange: #912B02;
+    --terracotta: #9B2416;
+    --light-brown: #9B5221;
+
+    --cream: #F7F5EF;
+    --white: #FFFFFF;
+}
+
+body {
+    margin: 0;
+    font-family: "Montserrat", Arial, sans-serif;
+    background-color: var(--cream);
+    color: var(--dark-green);
+    line-height: 1.7;
+}
+
+h1 {
+    font-family: "Lora", Georgia, serif;
+    color: var(--dark-green);
+    margin: 20px;
+}
+
+h2 {
+    margin: 20px;
+    font-family: "Lora", Georgia, serif;
+    color: var(--forest-green);
+}
+
+h3 {
+    margin: 20px;
+    font-family: "Lora", Georgia, serif;
+    color: var(--medium-green);
+}
+
+h4 {
+    margin: 20px;
+    font-family: "Lora", Georgia, serif;
+    color: var(--dark-brown);
+}
+
+
+P {
+    margin: 20px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/*NAVIGATION CSS*/
+header {
+    background-color: var(--dark-green);
+    padding: 10px;
+    align-items: center;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+  
+}
+
+.brand h1 {
+    color: white;
+    padding-left: 20px;
+    margin: 0;
+}
+
+.brand img {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    border: 2px solid var(--bright-green);
+}
+
+nav {
+    text-align: center;
+}
+
+nav a {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--white);
+    font-weight: 600;
+    margin: 5px 8px;
+    padding: 8px 12px;
+    border-radius: 5px;
+}
+
+nav a:hover {
+    background-color: var(--bright-green);
+    color: var(--white);
+}
