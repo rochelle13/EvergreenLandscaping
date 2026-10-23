@@ -1,14 +1,16 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Evergreen Landscaping | Home</title>
-
     <link rel="stylesheet" href="css_assets/styles.css">
+    <title>Evergreen Landscaping | Home</title>
+    <meta name="description" content="At Evergreen Landscaping we transform ordinary outdoor
+                spaces into beautiful, functional and sustainable
+                environments">
+    <meta name="keywords" content="landscaping, outdoor, creative, maintenance, lawn,
+ commerical, projects, garden, home">
 </head>
 
 <body>
@@ -57,6 +59,73 @@
 
         </section>
 
+        <div class="row">
+            <div class="column">
+                <img src="_images/garden.jpg" onclick="openModal();currentSlide(1)" class="hover-shadow">
+            </div>
+            <div class="column">
+                <img src="_images/flower garden.jpg" onclick="openModal();currentSlide(2)" class="hover-shadow">
+            </div>
+            <div class="column">
+                <img src="_images/backyard.jpg" onclick="openModal();currentSlide(3)" class="hover-shadow">
+            </div>
+            <div class="column">
+                <img src="_images/lawn.jpg" onclick="openModal();currentSlide(4)" class="hover-shadow">
+            </div>
+        </div>
+
+        <!-- The Modal/Lightbox -->
+        <div id="myModal" class="modal">
+            <span class="close cursor" onclick="closeModal()">&times;</span>
+            <div class="modal-content">
+
+                <div class="mySlides">
+                    <div class="numbertext">1 / 4</div>
+                    <img src="_images/garden.jpg" style="width:100%">
+                </div>
+
+                <div class="mySlides">
+                    <div class="numbertext">2 / 4</div>
+                    <img src="_images/flower garden.jpg" style="width:100%">
+                </div>
+
+                <div class="mySlides">
+                    <div class="numbertext">3 / 4</div>
+                    <img src="_images/backyard.jpg" style="width:100%">
+                </div>
+
+                <div class="mySlides">
+                    <div class="numbertext">4 / 4</div>
+                    <img src="_images/lawn.jpg" style="width:100%">
+                </div>
+
+                <!-- Next/previous controls -->
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+                <!-- Caption text -->
+                <div class="caption-container">
+                    <p id="caption"></p>
+                </div>
+
+                <!-- Thumbnail image controls -->
+                <div class="column">
+                    <img class="demo" src="_images/garden.jpg" onclick="currentSlide(1)" alt="Garden">
+                </div>
+
+                <div class="column">
+                    <img class="demo" src="_images/flower garden.jpg" onclick="currentSlide(2)" alt="Flowers">
+                </div>
+
+                <div class="column">
+                    <img class="demo" src="_images/backyard.jpg" onclick="currentSlide(3)" alt="Backyard">
+                </div>
+
+                <div class="column">
+                    <img class="demo" src="_images/lawn.jpg" onclick="currentSlide(4)" alt="Lawn">
+                </div>
+            </div>
+        </div>
 
         <section class="vision-section">
 
@@ -92,6 +161,7 @@
             <a class="button" href="quote.html">Request a Quote</a>
 
         </section>
+        <p>Today's Date: <span id="current-date"></span></p>
 
     </main>
 
@@ -99,10 +169,13 @@
     <!-- ================= FOOTER ================= -->
 
     <footer>
-        <p>Evergreen Landscaping &copy; 2026</p>
+        <p>Evergreen Landscaping <span id="year"></span></p>
     </footer>
 
+    <script language="javascript" src="js_assets/scripts.js"></script>
+
 </body>
+
 
 </html>
 ```
