@@ -22,7 +22,8 @@ if (galleryImgs.length) {
   let current = 0;
   const box = document.createElement("div");
   box.className = "lightbox"; box.hidden = true;
-  box.setAttribute("role", "dialog"); box.setAttribute("aria-label", "Image viewer");
+  box.setAttribute("role", "dialog");
+  box.setAttribute("aria-label", "Image viewer");
   box.innerHTML = '<button class="lb-close" aria-label="Close">&times;</button><button class="lb-prev" aria-label="Previous image">&#10094;</button><figure><img alt=""><figcaption></figcaption></figure><button class="lb-next" aria-label="Next image">&#10095;</button>';
   document.body.appendChild(box);
   const show = (i) => {
@@ -58,8 +59,10 @@ if ($("services-list")) {
       const card = document.createElement("article"); card.className = "card";
       const h = document.createElement("h2"); h.textContent = s.name;
       const p = document.createElement("p"); p.textContent = s.desc;
-      const ul = document.createElement("ul"); s.items.forEach(t => { const li = document.createElement("li"); li.textContent 
-        = t; ul.appendChild(li); });
+      const ul = document.createElement("ul"); s.items.forEach(t => {
+        const li = document.createElement("li"); li.textContent
+          = t; ul.appendChild(li);
+      });
       const f = document.createElement("p"); f.className = "from-price"; f.textContent = "From " + price(s) + " | Typical lead time: " + s.lead + " days";
       card.append(h, p, ul, f); list.appendChild(card);
     });
@@ -113,12 +116,12 @@ if (enquiry) {
     const out = $("enquiry-result");
     out.replaceChildren();
     const lines = ["Thank you, " + $("name").value.trim() + ". Here is your estimate for " + s.name + ".",
-      "Estimated cost: R" + Math.round(cost * 0.9).toLocaleString("en-ZA") + " to R" + Math.round(cost * 1.1).toLocaleString("en-ZA") + 
-      " (final price confirmed after a site visit).",
-      wanted >= earliest ? "Availability: your preferred date (" + fmt(wanted) + ") is available." :
-       "Availability: our earliest slot for this service is " + fmt(earliest) + ".",
-      "We will contact you on " + $("email").value.trim() + " to confirm."];
-    lines.forEach(t => { const p = document.createElement("p"); p.textContent = t; out.appendChild(p); }); 
+    "Estimated cost: R" + Math.round(cost * 0.9).toLocaleString("en-ZA") + " to R" + Math.round(cost * 1.1).toLocaleString("en-ZA") +
+    " (final price confirmed after a site visit).",
+    wanted >= earliest ? "Availability: your preferred date (" + fmt(wanted) + ") is available." :
+      "Availability: our earliest slot for this service is " + fmt(earliest) + ".",
+    "We will contact you on " + $("email").value.trim() + " to confirm."];
+    lines.forEach(t => { const p = document.createElement("p"); p.textContent = t; out.appendChild(p); });
     // textContent prevents script injection
     out.hidden = false; out.focus();
   });
@@ -134,8 +137,8 @@ if (contact) {
     const subject = "[" + v("topic") + "] Message from " + v("name");
     const body = "Name: " + v("name") + "\nEmail: " + v("email") + "\nPhone: " + v("phone") + "\nType of message: " + v("topic") + "\n\n" + v("message");
     const out = $("contact-result"); out.replaceChildren();
-    const p = document.createElement("p"); p.textContent = "Your email is ready. Press the button to send it to " + RECIPIENT 
-    + " from your email app.";
+    const p = document.createElement("p"); p.textContent = "Your email is ready. Press the button to send it to " + RECIPIENT
+      + " from your email app.";
     const a = document.createElement("a"); a.className = "button"; a.textContent = "Send email";
     a.href = "mailto:" + RECIPIENT + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
     out.append(p, a); out.hidden = false;
