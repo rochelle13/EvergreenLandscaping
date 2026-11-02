@@ -5,12 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css_assets/styles.css">
-    <title>Evergreen Landscaping | Home</title>
-    <meta name="description" content="At Evergreen Landscaping we transform ordinary outdoor
-                spaces into beautiful, functional and sustainable
-                environments">
-    <meta name="keywords" content="landscaping, outdoor, creative, maintenance, lawn,
- commerical, projects, garden, home">
+    <meta name="description" content="Evergreen Landscaping designs, builds and maintains gardens, lawns and outdoor spaces for homes and businesses in Durban, KwaZulu-Natal.">
+    <meta name="keywords" content="landscaping Durban, garden design, lawn maintenance, tree and hedge care, irrigation, garden clean-up">
+    <meta name="author" content="Evergreen Landscaping">
+    <link rel="icon" href="_images/logo.png">
+    <script src="js_assets/scripts.js" defer></script>
+
+    <title>Evergreen Landscaping | Garden Design, Lawn Care & Maintenance in Durban</title>
 </head>
 
 <body>
@@ -20,7 +21,7 @@
     <header>
         <div class="brand">
             <img src="_images/logo.png" alt="Evergreen Landscaping Logo">
-            <h1>Evergreen Landscaping</h1>
+            <p class="site-name">Evergreen Landscaping</p>
         </div>
 
         <nav>
@@ -40,7 +41,7 @@
 
         <section class="intro-section">
 
-            <h2>Creating Beautiful Spaces That Grow With You</h2>
+            <h1>Creating Beautiful Spaces That Grow With You</h1>
 
             <p>
                 At Evergreen Landscaping we transform ordinary outdoor
@@ -59,73 +60,26 @@
 
         </section>
 
-        <div class="row">
-            <div class="column">
-                <img src="_images/garden.jpg" onclick="openModal();currentSlide(1)" class="hover-shadow">
+        <section aria-label="Featured landscaping photos">
+            <h2>Recent Work</h2>
+            <p>Click any photo to view it full size. Each space was designed around how the client lives, from family lawns to colourful flower beds.</p>
+            <div class="gallery-grid" data-lightbox>
+                <figure class="gallery-item"><img src="_images/garden.jpg" alt="Landscaped garden with layered plants and a stone path" width="400" height="400" loading="lazy"></figure>
+                <figure class="gallery-item"><img src="_images/flower garden.jpg" alt="Colourful flower garden in full bloom" width="400" height="400" loading="lazy"></figure>
+                <figure class="gallery-item"><img src="_images/backyard.jpg" alt="Residential backyard with new lawn and planted borders" width="400" height="400" loading="lazy"></figure>
+                <figure class="gallery-item"><img src="_images/lawn.jpg" alt="Well maintained green lawn with neat edging" width="400" height="400" loading="lazy"></figure>
             </div>
-            <div class="column">
-                <img src="_images/flower garden.jpg" onclick="openModal();currentSlide(2)" class="hover-shadow">
-            </div>
-            <div class="column">
-                <img src="_images/backyard.jpg" onclick="openModal();currentSlide(3)" class="hover-shadow">
-            </div>
-            <div class="column">
-                <img src="_images/lawn.jpg" onclick="openModal();currentSlide(4)" class="hover-shadow">
-            </div>
-        </div>
+        </section>
 
-        <!-- The Modal/Lightbox -->
-        <div id="myModal" class="modal">
-            <span class="close cursor" onclick="closeModal()">&times;</span>
-            <div class="modal-content">
-
-                <div class="mySlides">
-                    <div class="numbertext">1 / 4</div>
-                    <img src="_images/garden.jpg" style="width:100%">
-                </div>
-
-                <div class="mySlides">
-                    <div class="numbertext">2 / 4</div>
-                    <img src="_images/flower garden.jpg" style="width:100%">
-                </div>
-
-                <div class="mySlides">
-                    <div class="numbertext">3 / 4</div>
-                    <img src="_images/backyard.jpg" style="width:100%">
-                </div>
-
-                <div class="mySlides">
-                    <div class="numbertext">4 / 4</div>
-                    <img src="_images/lawn.jpg" style="width:100%">
-                </div>
-
-                <!-- Next/previous controls -->
-                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                <a class="next" onclick="plusSlides(1)">&#10095;</a>
-
-                <!-- Caption text -->
-                <div class="caption-container">
-                    <p id="caption"></p>
-                </div>
-
-                <!-- Thumbnail image controls -->
-                <div class="column">
-                    <img class="demo" src="_images/garden.jpg" onclick="currentSlide(1)" alt="Garden">
-                </div>
-
-                <div class="column">
-                    <img class="demo" src="_images/flower garden.jpg" onclick="currentSlide(2)" alt="Flowers">
-                </div>
-
-                <div class="column">
-                    <img class="demo" src="_images/backyard.jpg" onclick="currentSlide(3)" alt="Backyard">
-                </div>
-
-                <div class="column">
-                    <img class="demo" src="_images/lawn.jpg" onclick="currentSlide(4)" alt="Lawn">
-                </div>
-            </div>
-        </div>
+        <section>
+            <h2>How It Works</h2>
+            <ol>
+                <li><strong>Consultation:</strong> we visit your property and listen to your ideas, budget and timeline.</li>
+                <li><strong>Design and quote:</strong> you receive a clear plan and a fixed price.</li>
+                <li><strong>Installation:</strong> our team builds and plants, keeping the site tidy.</li>
+                <li><strong>Aftercare:</strong> regular maintenance keeps your garden looking its best.</li>
+            </ol>
+        </section>
 
         <section class="vision-section">
 
@@ -139,10 +93,10 @@
             <h2>Why Choose Evergreen Landscaping?</h2>
 
             <ul>
-                <li>Professional and reliable</li>
+                <li>Professional and reliable: we arrive on the agreed day and keep you updated</li>
                 <li>Creative and personalized landscaping solutions</li>
                 <li>Attention to detail on every project</li>
-                <li>Quality workmanship and materials</li>
+                <li>Quality workmanship and hardy, water-wise plants suited to the KwaZulu-Natal climate</li>
                 <li>Solutions designed around your needs</li>
             </ul>
 
@@ -169,13 +123,12 @@
     <!-- ================= FOOTER ================= -->
 
     <footer>
-        <p>Evergreen Landscaping <span id="year"></span></p>
+        <p>Evergreen Landscaping &copy; <span id="year">2026</span></p>
     </footer>
-
-    <script language="javascript" src="js_assets/scripts.js"></script>
 
 </body>
 
 
 </html>
+
 ```

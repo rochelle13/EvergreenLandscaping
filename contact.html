@@ -6,9 +6,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Contact Us | Evergreen Landscaping</title>
+    <title>Contact Us | Evergreen Landscaping Durban</title>
 
     <link rel="stylesheet" href="css_assets/styles.css">
+    <meta name="description" content="Contact Evergreen Landscaping in Durban by phone, email or message form, and find our head office and depots on the interactive map.">
+    <meta name="keywords" content="contact landscaper, Evergreen Landscaping contact, landscaping Durban North, Umhlanga, Pinetown">
+    <meta name="author" content="Evergreen Landscaping">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
+    <link rel="icon" href="_images/logo.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js" defer></script>
+    <script src="js_assets/scripts.js" defer></script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"LandscapingBusiness","name":"Evergreen Landscaping","telephone":"+27123456789","email":"info@evergreenlandscaping.co.za","address":{"@type":"PostalAddress","streetAddress":"123 Greenway Avenue","addressLocality":"Durban","addressRegion":"KwaZulu-Natal","addressCountry":"ZA"}}</script>
+
 </head>
 
 <body>
@@ -18,7 +27,7 @@
     <header>
         <div class="brand">
             <img src="_images/logo.png" alt="Evergreen Landscaping Logo">
-            <h1>Evergreen Landscaping</h1>
+            <p class="site-name">Evergreen Landscaping</p>
         </div>
 
         <nav>
@@ -56,65 +65,22 @@
 
             <div class="contact-form">
 
-                <form action="mailto:romoodley@iie.ac.za" method="post">
-
+                <form id="contact-form" novalidate>
                     <h2>Send Us a Message</h2>
-
-                    <p>
-                        Please complete the contact form below and a member
-                        of our team will get back to you.
-                    </p>
-
-
-                    <label for="name">Full Name:</label>
-
-                    <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        required>
-
-
-                    <label for="email">Email Address:</label>
-
-                    <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        required>
-
-
-                    <label for="phone">Phone Number:</label>
-
-                    <input
-                        type="tel"
-                        id="phone"
-                        name="phone"
-                        required>
-
-
-                    <label for="service">Service Required:</label>
-
-                    <input
-                        type="text"
-                        id="service"
-                        name="service"
-                        placeholder="Enter the service you require"
-                        required>
-
-
-                    <label for="message">Message:</label>
-
-                    <textarea
-                        id="message"
-                        name="message"
-                        rows="5"
-                        required></textarea>
-
-
-                    <input type="submit" value="Submit">
-
+                    <p>Complete the form below. We will prepare an email for you to send to our team.</p>
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" data-check="name" autocomplete="name"><span class="error" id="name-error"></span>
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" data-check="email" autocomplete="email"><span class="error" id="email-error"></span>
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" data-check="phone" autocomplete="tel"><span class="error" id="phone-error"></span>
+                    <label for="topic">Type of Message</label>
+                    <select id="topic" data-check="service"><option value="">Choose a type</option><option>General question</option><option>Compliment</option><option>Complaint</option><option>Partnership</option></select><span class="error" id="topic-error"></span>
+                    <label for="message">Message (10-500 characters)</label>
+                    <textarea id="message" data-check="message" rows="5"></textarea><span class="error" id="message-error"></span>
+                    <input type="submit" value="Prepare Email">
                 </form>
+                <div id="contact-result" class="result" hidden aria-live="polite"></div>
 
             </div>
 
@@ -123,13 +89,8 @@
 
             <div class="contact-map">
 
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6924.677278673844!2d31.026087999343872!3d-29.796759579907242!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ef707aa871594bd%3A0x8f02f03f86d820cd!2sEmeris%20-%20Durban%20North%20Campus!5e0!3m2!1sen!2sza!4v1786112902341!5m2!1sen!2sza"
-                    title="Evergreen Landscaping Location Map"
-                    allowfullscreen
-                    loading="lazy"
-                    referrerpolicy="strict-origin-when-cross-origin">
-                </iframe>
+                <div id="map" role="region" aria-label="Map of Evergreen Landscaping locations"></div>
+                <noscript><p>Head office: 123 Greenway Avenue, Durban North.</p></noscript>
 
             </div>
 
@@ -181,10 +142,9 @@
     <!-- ================= FOOTER ================= -->
 
     <footer>
-        <p>Evergreen Landscaping &copy; 2026</p>
+        <p>Evergreen Landscaping &copy; <span id="year">2026</span></p>
     </footer>
 
 </body>
 
 </html>
-```

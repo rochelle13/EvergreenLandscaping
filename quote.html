@@ -9,6 +9,12 @@
     <title>Request a Quote | Evergreen Landscaping</title>
 
     <link rel="stylesheet" href="css_assets/styles.css">
+    <meta name="description" content="Request a landscaping estimate online. Tell us about your garden and get an estimated cost and availability straight away.">
+    <meta name="keywords" content="landscaping quote, garden estimate, landscaping prices Durban, book a landscaper">
+    <meta name="author" content="Evergreen Landscaping">
+    <link rel="icon" href="_images/logo.png">
+    <script src="js_assets/scripts.js" defer></script>
+
 </head>
 
 <body>
@@ -18,7 +24,7 @@
     <header>
         <div class="brand">
             <img src="_images/logo.png" alt="Evergreen Landscaping Logo">
-            <h1>Evergreen Landscaping</h1>
+            <p class="site-name">Evergreen Landscaping</p>
         </div>
 
         <nav>
@@ -57,16 +63,32 @@
         </section>
 
 
-        <!-- ================= GOOGLE FORM ================= -->
-
+        <!-- ================= ENQUIRY FORM (validated with JavaScript) ================= -->
         <section class="quote-form">
-
-            <iframe
-                src="https://docs.google.com/forms/d/e/1FAIpQLSdVYXZLQciREmWA_q9_sdnclhICV9N8uUVnzNDrVMO_kx8Jfw/viewform?embedded=true"
-                title="Evergreen Landscaping Quote Request Form">
-                Loading…
-            </iframe>
-
+            <form id="enquiry-form" novalidate>
+                <h2>Your Project Details</h2>
+                <label for="name">Full Name</label>
+                <input type="text" id="name" data-check="name" autocomplete="name"><span class="error" id="name-error"></span>
+                <label for="email">Email Address</label>
+                <input type="email" id="email" data-check="email" autocomplete="email"><span class="error" id="email-error"></span>
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" data-check="phone" autocomplete="tel" placeholder="031 123 4567"><span class="error" id="phone-error"></span>
+                <label for="service">Service Required</label>
+                <select id="service" data-check="service">
+                    <option value="">Choose a service</option>
+                    <option>Garden Design &amp; Landscaping</option>
+                    <option>Lawn Installation &amp; Maintenance</option>
+                    <option>Tree &amp; Hedge Care</option>
+                    <option>Irrigation Systems</option>
+                    <option>Garden Clean-Ups</option>
+                </select><span class="error" id="service-error"></span>
+                <label for="size">Approximate Area (m&sup2;)</label>
+                <input type="number" id="size" data-check="size" min="10"><span class="error" id="size-error"></span>
+                <label for="date">Preferred Start Date</label>
+                <input type="date" id="date" data-check="date"><span class="error" id="date-error"></span>
+                <input type="submit" value="Get My Estimate">
+            </form>
+            <div id="enquiry-result" class="result" tabindex="-1" hidden aria-live="polite"></div>
         </section>
 
     </main>
@@ -75,10 +97,9 @@
     <!-- ================= FOOTER ================= -->
 
     <footer>
-        <p>Evergreen Landscaping &copy; 2026</p>
+        <p>Evergreen Landscaping &copy; <span id="year">2026</span></p>
     </footer>
 
 </body>
 
 </html>
-```

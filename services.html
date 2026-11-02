@@ -1,103 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services</title>
+    <title>Landscaping Services & Prices | Evergreen Landscaping</title>
     <link rel="stylesheet" href="css_assets/styles.css">
+    <meta name="description" content="Search our garden design, lawn care, tree and hedge, irrigation and garden clean-up services with starting prices and lead times.">
+    <meta name="keywords" content="landscaping services, garden design, lawn care, irrigation systems, tree trimming, garden clean-up">
+    <meta name="author" content="Evergreen Landscaping">
+    <link rel="icon" href="_images/logo.png">
+    <script src="js_assets/scripts.js" defer></script>
+
 
 </head>
-<header>
-    <div class="brand">
-        <img src="_images/logo.png" alt="Evergreen Landscaping Logo">
-        <h1>Evergreen Landscaping</h1>
-    </div>
-
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About Us</a>
-        <a href="services.html">Services</a>
-        <a href="projects.html">Projects</a>
-        <a href="quote.html">Get a Quote</a>
-        <a href="contact.html">Contact Us</a>
-    </nav>
-</header>
 
 <body>
+    <header>
+        <div class="brand">
+            <img src="_images/logo.png" alt="Evergreen Landscaping Logo">
+            <p class="site-name">Evergreen Landscaping</p>
+        </div>
 
-    <h1>Our Landscaping Services</h1>
-    <p>Professional Landscaping Solutions for Every Outdoor Space
-        At Evergreen Landscaping, we offer a range of professional landscaping and garden maintenance services
-        designed to keep your outdoor space beautiful, healthy, and functional.</p>
-    <h2>Garden Design & Landscaping</h2>
-    <p>Bring your dream garden to life with a customised landscaping design. We work with you to
-        understand your style, preferences, and requirements before creating an outdoor space that
-        complements your property.<br>
-        Our garden design services may include:</p>
-    <ul>
-        <li>Garden layout and planning</li>
-        <li>Plant selection</li>
-        <li>Garden beds and borders</li>
-        <li>Decorative landscaping</li>
-        <li>Feature gardens</li>
-        <li>Pathways and outdoor areas</li>
-        <li>Landscape renovations</li>
-    </ul>
-    <h2>Lawn Installation & Maintenance</h2>
-    <p>A healthy lawn can completely transform the appearance of your property. Our lawn services help create
-        and maintain a lush, attractive outdoor space.<br>
-        Our services include:</p>
-    <ul>
-        <li>New lawn installation</li>
-        <li>Lawn preparation</li>
-        <li>Lawn mowing</li>
-        <li>Lawn edging</li>
-        <li>Fertilising</li>
-        <li>Weed control</li>
-        <li>General lawn maintenance</li>
-    </ul>
-    <h2>Tree & Hedge Care</h2>
-    <p>Healthy and well-maintained trees and hedges add beauty, privacy,
-        and structure to your garden. Our team can help maintain your greenery throughout the year.<br>
-        Our services include:</p>
-    <ul>
-        <li>Tree trimming</li>
-        <li>Hedge trimming and shaping</li>
-        <li>Pruning</li>
-        <li>Branch removal</li>
-        <li>General tree maintenance</li>
-    </ul>
-    <h2>Irrigation Systems</h2>
-    <p>Keep your garden healthy with an effective irrigation solution.
-        We can assist with irrigation planning, installation, and maintenance to
-        help ensure your plants receive consistent and efficient watering.<br>
-        Our services include:</p>
-    <ul>
-        <li>Irrigation system installation</li>
-        <li>Sprinkler systems</li>
-        <li>Drip irrigation</li>
-        <li>Irrigation maintenance</li>
-        <li>System inspections</li>
-    </ul>
-    <h2>Garden Clean-Ups</h2>
-    <p>Give your garden a fresh and tidy appearance with
-        our professional garden clean-up services<br>
-        Our services include:</p>
-    <ul>
-        <li>Weeding</li>
-        <li>Leaf removal</li>
-        <li>Pruning</li>
-        <li>Removal of garden debris</li>
-        <li>Clearing overgrown areas</li>
-        <li>General garden tidying</li>
-    </ul>
-    <br>
-    <h3>Let's Transform Your Outdoor Space</h3>
-    <p>No project is too big or too small. Contact Evergreen Landscaping today to discuss your landscaping needs and
-        discover how we can help bring your vision to life.</p>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="services.html">Services</a>
+            <a href="projects.html">Projects</a>
+            <a href="quote.html">Get a Quote</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+    </header>
 
+    <main class="page-container">
+        <section>
+            <h1>Our Landscaping Services</h1>
+            <p>Evergreen Landscaping offers professional garden design, lawn care, tree and hedge maintenance, irrigation and clean-up services for homes, complexes and commercial properties across Durban. Every job starts with a conversation about how you use your outdoor space.</p>
+            <p>Use the search box, category filter and sort menu to find the service you need. The "from" prices are starting estimates; the final price depends on the size and condition of your property.</p>
+        </section>
 
+        <section class="toolbar" aria-label="Search, filter and sort services">
+            <div><label for="search">Search services</label><input type="search" id="search" placeholder="e.g. lawn, drip, hedge"></div>
+            <div><label for="category">Category</label><select id="category"><option value="all">All categories</option></select></div>
+            <div><label for="sort">Sort by</label><select id="sort"><option value="name">Name (A-Z)</option><option value="price-low">Price: low to high</option><option value="price-high">Price: high to low</option></select></div>
+        </section>
+        <p id="results-count" aria-live="polite"></p>
+        <section id="services-list" class="card-grid"></section>
+        <noscript><p>Our services: garden design and landscaping, lawn installation and maintenance, tree and hedge care, irrigation systems and garden clean-ups. Please enable JavaScript to search the full list.</p></noscript>
+
+        <section>
+            <h2>Frequently Asked Questions</h2>
+            <button class="accordion-btn" aria-expanded="false">How long does a garden design take?</button>
+            <div class="accordion-panel" hidden><p>Most residential designs take two to three weeks from the first site visit to the final plan. Construction time depends on the size of the garden.</p></div>
+            <button class="accordion-btn" aria-expanded="false">Do you offer once-off and regular services?</button>
+            <div class="accordion-panel" hidden><p>Yes. Clean-ups and installations are usually once-off, while lawn mowing, hedge trimming and irrigation checks can be scheduled weekly, fortnightly or monthly.</p></div>
+            <button class="accordion-btn" aria-expanded="false">How is the final price worked out?</button>
+            <div class="accordion-panel" hidden><p>We estimate using the service type and the area in square metres, then confirm a fixed quote after a free site visit. Use our <a href="quote.html">quote page</a> for an instant estimate.</p></div>
+        </section>
+
+        <section class="call-to-action">
+            <h3>Let's Transform Your Outdoor Space</h3>
+            <p>No project is too big or too small. Request an estimate today and discover how we can bring your vision to life.</p>
+            <a class="button" href="quote.html">Request a Quote</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>Evergreen Landscaping &copy; <span id="year">2026</span></p>
+    </footer>
 </body>
 
 </html>
