@@ -22,11 +22,11 @@
 }
 
 /*GENERAL RESET*/
-* { box-sizing: border-box; } 
+* { box-sizing: border-box; margin: 0; padding: 0; } 
 html { scroll-behavior: smooth; } 
 body { 
     margin: 0; 
-    background-color: var(--cream)
+    background-color: var(--cream);
     color: var(--dark-green); 
     font-family: "Montserrat", Arial, sans-serif; 
      font-size: 1rem; 
@@ -74,7 +74,7 @@ header {
     border: 0.2rem solid var(--white); 
     flex-shrink: 0; 
 }
-.brand h1, #navigation h1 { 
+.brand h1, #navigation h1, .site-name { 
     color: var(--white); 
     font-family: "Lora", Georgia, serif; 
     font-size: clamp(1.4rem, 2.5vw, 2.2rem); 
@@ -478,128 +478,204 @@ footer {
     } 
 }
 
-.row > .column {
-  padding: 0 8px;
+
+/*SITE NAME (replaces a second h1 so each page has one h1 for SEO)*/
+.site-name { 
+    color: var(--white); 
+    font-family: "Lora", Georgia, serif; 
+    font-size: clamp(1.4rem, 2.5vw, 2.2rem); 
+    font-weight: 700; 
+    margin: 0; 
 }
 
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
+main h1 { 
+    margin-bottom: 1rem; 
+}
+main section { 
+    margin-bottom: 2rem; }
+
+/*BUTTONS AND LINKS*/
+.button { 
+    display: inline-block; 
+    background: var(--forest-green); 
+    color: var(--white); 
+    padding: 0.8rem 1.5rem; 
+    border-radius: 0.4rem; 
+    text-decoration: none; 
+    font-weight: 700; 
+    transition: background-color 0.3s ease; 
+}
+.button:hover, .button:focus-visible { 
+    background: var(--bright-green); 
+}
+.button:active { 
+    background: var(--medium-green); 
+}
+a:focus-visible, button:focus-visible, img:focus-visible { 
+    outline: 0.2rem solid var(--bright-green); 
+    outline-offset: 0.2rem; 
 }
 
-/* Create four equal columns that floats next to eachother */
-.column {
-  float: left;
-  width: 25%;
+/*GRIDS (about values, contact details, service cards)*/
+.values-grid, .contact-details-grid, .card-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); 
+    gap: 1.2rem; 
+}
+.values-grid article, .about-card, .card, .call-to-action { 
+    background: var(--white); 
+    padding: 1.2rem 1.5rem; 
+    border-radius: 0.8rem; 
+    box-shadow: var(--shadow); 
+}
+.card ul { 
+    box-shadow: none; 
+    padding: 0.5rem 0 0 1.5rem; 
+    border: none; 
+    background: none; 
+}
+.from-price { 
+    font-weight: 700; 
+    color: var(--burnt-orange); 
 }
 
-/* The Modal (background) */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  padding-top: 100px;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: black;
+/*CONTACT LAYOUT using grid-template-areas*/
+.contact-grid { 
+    display: grid; 
+    gap: 2rem; 
+    grid-template-columns: 1fr 1fr; 
+    grid-template-areas: "form map"; 
+}
+.contact-form { 
+    grid-area: form; 
+} 
+.contact-map { 
+    grid-area: map; 
+}
+#map { 
+    width: 100%; 
+    height: 100%; 
+    min-height: 25rem; 
+    border-radius: 0.8rem; 
+    box-shadow: var(--shadow); 
 }
 
-/* Modal Content */
-.modal-content {
-  position: relative;
-  background-color: #fefefe;
-  margin: auto;
-  padding: 0;
-  width: 90%;
-  max-width: 1200px;
+/*SERVICES TOOLBAR (search, filter, sort)*/
+.toolbar { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); 
+    gap: 0.5rem 1rem; 
+    align-items: end; 
+}
+select { 
+    width: 100%; 
+    padding: 0.8rem; 
+    border: 0.1rem solid var(--medium-green); 
+    border-radius: 0.4rem; 
+    font: inherit; 
+    background: var(--white); 
+}
+select:focus { 
+    outline: none; 
+    border-color: var(--bright-green); 
+    box-shadow: 0 0 0 0.15rem rgba(0, 164, 57, 0.2); 
+}
+.card:hover { 
+    transform: translateY(-0.2rem); 
+}
+.card { 
+    transition: transform 0.3s ease; 
 }
 
-/* The Close Button */
-.close {
-  color: white;
-  position: absolute;
-  top: 10px;
-  right: 25px;
-  font-size: 35px;
-  font-weight: bold;
+/*FORM ERRORS AND RESULTS*/
+.error { 
+    color: var(--terracotta); 
+    font-size: 0.9rem; 
+    min-height: 1.2rem; 
+}
+input.invalid, select.invalid, textarea.invalid { 
+    border-color: var(--terracotta); 
+}
+.result { 
+    background: var(--white); 
+    border-left: 0.35rem solid var(--bright-green); 
+    padding: 1rem 1.5rem; 
+    margin-top: 1.5rem; 
+    border-radius: 0.6rem; 
+    box-shadow: var(--shadow); 
 }
 
-.close:hover,
-.close:focus {
-  color: #999;
-  text-decoration: none;
-  cursor: pointer;
+/*ACCORDION*/
+.accordion-btn { 
+    width: 100%; 
+    text-align: left; 
+    background: var(--forest-green); color: var(--white); 
+    border: none; 
+    padding: 1rem; 
+    margin-top: 0.5rem; 
+    font: 600 1rem "Montserrat", Arial, sans-serif; 
+    border-radius: 0.4rem; 
+    cursor: pointer; 
+}
+.accordion-btn:hover { 
+    background: var(--medium-green); 
+}
+.accordion-btn::after { 
+    content: "+"; 
+    float: right; 
+}
+.accordion-btn[aria-expanded="true"]::after { content: "\2212"; }
+.accordion-panel { 
+    background: var(--white); 
+    padding: 1rem; 
+    border-radius: 0 0 0.4rem 0.4rem; 
 }
 
-/* Hide the slides by default */
-.mySlides {
-  display: none;
+/*LIGHTBOX*/
+.gallery-grid img[tabindex], [data-lightbox] img { cursor: zoom-in; }
+.lightbox { 
+    position: fixed; 
+    inset: 0; 
+    background: rgba(0, 0, 0, 0.9); 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    z-index: 100; 
+    animation: fade 0.3s ease; 
 }
-
-/* Next & previous buttons */
-.prev,
-.next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  padding: 16px;
-  margin-top: -50px;
-  color: white;
-  font-weight: bold;
-  font-size: 20px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-  -webkit-user-select: none;
+.lightbox[hidden] { display: none; }
+.lightbox figure { 
+    max-width: 90vw; 
+    text-align: center; 
+    color: var(--white); 
 }
-
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
+.lightbox figure img { 
+    max-height: 75vh; 
+    margin: 0 auto; 
+    border-radius: 0.5rem; 
 }
-
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover,
-.next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
+.lightbox button { 
+    position: absolute; 
+    background: none; 
+    border: none; 
+    color: var(--white); 
+    font-size: 2.2rem; 
+    cursor: pointer; 
+    padding: 1rem; 
 }
-
-/* Number text (1/4 etc) */
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
+.lb-close { 
+    top: 0; 
+    right: 1rem; 
+} 
+.lb-prev { 
+    left: 0.5rem; 
+} 
+.lb-next { 
+    right: 0.5rem; 
 }
-
-/* Caption text */
-.caption-container {
-  text-align: center;
-  background-color: black;
-  padding: 2px 16px;
-  color: white;
+.lightbox button:hover { 
+    color: var(--bright-green); 
 }
-
-img.demo {
-  opacity: 0.6;
-}
-
-.active,
-.demo:hover {
-  opacity: 1;
-}
-
-img.hover-shadow {
-  transition: 0.3s;
-}
-
-.hover-shadow:hover {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+@keyframes fade { 
+    from { opacity: 0; } to { opacity: 1; } 
 }
